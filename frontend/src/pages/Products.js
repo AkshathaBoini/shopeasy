@@ -149,7 +149,10 @@ useEffect(() => {
                   </div>
 
                   <button
-                    onClick={() => onAddToCart(product)}
+                    onClick={(e) => {
+  e.stopPropagation();
+  onAddToCart(product);
+}}
                     style={{
                       width: '100%', backgroundColor: '#4a90d9',
                       color: 'white', border: 'none',

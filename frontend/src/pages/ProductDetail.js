@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 function ProductDetail({ onAddToCart, onBack }) {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const productId = window.location.pathname.split('/').pop();
+  const { id: productId } = useParams();
 
   useEffect(() => {
     const fetchProduct = async () => {
