@@ -11,7 +11,7 @@ function ProductDetail({ onAddToCart, onBack }) {
     const fetchProduct = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`http://localhost:5000/api/products/${productId}`);
+        const res = await fetch(`https://shopeasy-backend-e8oi.onrender.com/api/products/${productId}`);
         const data = await res.json();
         setProduct(data);
       } catch (err) {
